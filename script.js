@@ -1,3 +1,22 @@
+// borrar todo el localStorage
+// localStorage.clear();
+// borrar un item específico
+//  localStorage.removeItem("alumnos");
+
+// let alumnos_lista = [
+//     { nombre: "Juan", apellido: "Pérez", edad: 20 },
+//     { nombre: "María", apellido: "Gómez", edad: 22 },
+//     { nombre: "Luis", apellido: "Martínez", edad: 19 }
+// ];
+
+// localStorage.setItem("alumnos", JSON.stringify(alumnos_lista));
+
+// let alumnos_storage = JSON.parse(localStorage.getItem("alumnos"));
+
+// console.log(alumnos_storage);
+
+// console.log("El primer alumnos es",alumnos_storage[1]);
+
 // Cargar alumnos desde LocalStorage o array vacío
 let alumnos = JSON.parse(localStorage.getItem("alumnos")) || [];
 
@@ -41,8 +60,11 @@ document.getElementById("alumnoForm").addEventListener("submit", function (e) {
         document.getElementById("editIndex").value = "";
     }
 
+    // giarda en el localStorage
     guardarLocal();
+    // Actualiza la tabla del html con los datos del localstorage
     mostrarAlumnos();
+    // Resetea el formulario(vacia los campos)
     this.reset();
 });
 
